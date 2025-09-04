@@ -1,0 +1,70 @@
+:root {
+  --accent: #00ffd5;
+  --bg1: #0f2027;
+  --bg2: #2c5364;
+  --card: #0d2a30;
+  --muted: #cde9e9;
+  --footer: #001f27;
+  font-family: Inter, system-ui, Arial;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, var(--bg1), #203a43, var(--bg2));
+  color: var(--muted);
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* Rain effect */
+.rain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.drop {
+  position: absolute;
+  top: -150vh;
+  width: 2px;
+  background: rgba(0, 255, 213, 0.28);
+  animation: fall 6s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 213, 0.35));
+}
+@keyframes fall {
+  to {
+    transform: translateY(300vh);
+  }
+}
+
+/* Card dasar */
+.card {
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: 14px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--muted);
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+.card .icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+/* Button dasar */
+.btn {
+  background: var(--accent);
+  color: #001f27;
+  padding: 10px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+}
